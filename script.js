@@ -4,10 +4,15 @@
  * it should only start coloring whne you click. Just mouseover should not trigger color
  * size slider is opposite (large to small). fix it
  * When you change size of brush (even with erasor) it erases the entire board. Which makes it useless. Fix this
- */
+ * 
+ * Instead of using %, use flex-grow, flex-shrink and flex-basis to set toolbar
+ * 
+ * need to set a width based on screen size in CSS. Because otherwise flex makes it idiotically rectangular 
+*/
+
 
 const container = document.querySelector('#container')
-let gridsize = 20
+let gridsize = 100
 let row
 let column
 

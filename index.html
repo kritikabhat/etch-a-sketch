@@ -12,10 +12,12 @@
         <h1>Etch-A-Sketch</h1>
         <div id="sketchArea">
             <section id="toolbarArea">
-                <div>Slider</div>
-                <div>Change Color</div>
-                <div>Erasor</div>
-                <div>Clear Board</div>
+                <div>Pick brush size</div>
+                <div><input id="brushSizeInput" type="range" nin="1" max="20"></div>
+                <div>Pick Brush Color</div>
+                <div><input id="colorInput" type="color"></div>
+                <div><button id="erasorBtn">Erasor</button></div>
+                <div><button id="clearBtn">Clear Board</button></div>
             </section>
             <section id="gridArea">
                 <div id="container"></div>
