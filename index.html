@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="author" content="Kritika">
         <meta name="description" content="Basic sketchboard">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Demo</title>
         <link rel="icon" href="images/icon.png" type="imagine/x-icon">
@@ -12,12 +13,21 @@
         <h1>Etch-A-Sketch</h1>
         <div id="sketchArea">
             <section id="toolbarArea">
-                <div>Pick brush size</div>
-                <div><input id="brushSizeInput" type="range" nin="1" max="20"></div>
-                <div>Pick Brush Color</div>
-                <div><input id="colorInput" type="color"></div>
-                <div><button id="erasorBtn">Erasor</button></div>
-                <div><button id="clearBtn">Clear Board</button></div>
+                <div class="toolbarDiv">
+                    <div>Brush size</div>
+                    <div><input id="brushSizeInput" type="range" nin="1" max="20"></div>
+                </div>
+                <div class="toolbarDiv">
+                    <div>Brush Color</div>
+                    <div><input id="colorInput" type="color">
+                </div>
+                </div>
+                <div class="toolbarDiv">
+                    <button id="erasorBtn">Erasor</button>
+                </div>
+                <div class="toolbarDiv">
+                    <button id="clearBtn">Clear Board</button>
+                </div>
             </section>
             <section id="gridArea">
                 <div id="container"></div>

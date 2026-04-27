@@ -7,7 +7,7 @@
  * 
  * Instead of using %, use flex-grow, flex-shrink and flex-basis to set toolbar
  * 
- * need to set a width based on screen size in CSS. Because otherwise flex makes it idiotically rectangular 
+ * if possible, need to set a width of gridArea based on screen size in CSS. Because otherwise flex makes it idiotically rectangular 
 */
 
 
