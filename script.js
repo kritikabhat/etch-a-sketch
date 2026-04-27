@@ -1,26 +1,44 @@
 /**
- * Add a color wheel to allow to change color
  * Refactor code to be better- actually change everything
- * it should only start coloring whne you click. Just mouseover should not trigger color
- * size slider is opposite (large to small). fix it
  * When you change size of brush (even with erasor) it erases the entire board. Which makes it useless. Fix this
  * 
- * Instead of using %, use flex-grow, flex-shrink and flex-basis to set toolbar
+ * if possible, need to set a width of gridArea based on screen size in CSS. 
+ * Because otherwise flex makes it idiotically rectangular 
  * 
- * if possible, need to set a width of gridArea based on screen size in CSS. Because otherwise flex makes it idiotically rectangular 
+ * For the grid: use flex wrap and a simple loop gridsize * gridsize?
+ * instead of On2. When you set a width for the grid, this works as well
+ * 
+ * Give erasor its own slider so you can change erasor size
+ * 
+ * 
 */
 
-
 const container = document.querySelector('#container')
+const brushSizeInput = document.querySelector('#brushSizeInput')
+const colorInput = document.querySelector('#colorInput')
+const erasorBtn = document.querySelector('#erasorBtn')
+const clearBtn = document.querySelector('#clearBtn')
+
 let gridsize = 100
 let row
 let column
+let draw = false
+let selectedColor = '#000000'
+
+erasorBtn.addEventListener('click', (e) => {
+    selectedColor = '#FFFFFF'
+})
+
+
+
+colorInput.addEventListener('input', (e) => {
+    selectedColor = e.target.value
+})
 
 function createGrid() {
     for (let i = 0; i < gridsize; i++) {
         row = document.createElement('div')
         row.className = 'gridRow'
-        console.log(row)
         for (let j = 0; j < gridsize; j++) {
             column = document.createElement('span')
             column.className = 'gridColumn'
@@ -30,4 +48,22 @@ function createGrid() {
     }
 }
 
+function print() {
+    container.addEventListener('mousedown', (e) => {
+        draw = true
+        e.target.style.backgroundColor = selectedColor
+    })
+
+    container.addEventListener('mousemove', (e) => {
+        if (draw)
+            e.target.style.backgroundColor = selectedColor
+    })
+
+    container.addEventListener('mouseup', (e) => {
+        e.target.style.backgroundColor = selectedColor
+        draw = false
+    })
+}
+
 createGrid()
+print()
