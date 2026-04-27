@@ -30,7 +30,8 @@ erasorBtn.addEventListener('click', (e) => {
 })
 
 clearBtn.addEventListener('click', (e) => {
-
+    container.innerHTML = ''
+    createGrid()
 })
 
 brushSizeInput.addEventListener('click', (e) => {

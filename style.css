@@ -31,7 +31,6 @@ body h1 {
     flex: 4 0 auto;
     display: flex;
     height: 40em;
-    border: 1px solid red;
 }
 
 .sketchArea #gridArea #container {
@@ -39,14 +38,13 @@ body h1 {
     flex-direction: column;
     flex-wrap: wrap;
     flex-basis: 100%;
-    border: 1px solid green;
+    border: 3px solid black;
 }
 
 .gridRow {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
-    border: 1px solid red;
 }
 
 .gridColumn {
