@@ -29,7 +29,13 @@ erasorBtn.addEventListener('click', (e) => {
     selectedColor = '#FFFFFF'
 })
 
+clearBtn.addEventListener('click', (e) => {
 
+})
+
+brushSizeInput.addEventListener('click', (e) => {
+
+})
 
 colorInput.addEventListener('input', (e) => {
     selectedColor = e.target.value
@@ -38,10 +44,10 @@ colorInput.addEventListener('input', (e) => {
 function createGrid() {
     for (let i = 0; i < gridsize; i++) {
         row = document.createElement('div')
-        row.className = 'gridRow'
+        row.className = `gridRow`
         for (let j = 0; j < gridsize; j++) {
             column = document.createElement('span')
-            column.className = 'gridColumn'
+            column.className = `gridColumn`
             row.appendChild(column)
         }
         container.appendChild(row)
