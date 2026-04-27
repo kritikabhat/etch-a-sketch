@@ -1,51 +1,28 @@
-const container = document.getElementById('container')
-const gridDiv = document.getElementById('gridDiv')
-const slider = document.getElementById('slider')
+/**
+ * Add a color wheel to allow to change color
+ * Refactor code to be better- actually change everything
+ * it should only start coloring whne you click. Just mouseover should not trigger color
+ * size slider is opposite (large to small). fix it
+ * When you change size of brush (even with erasor) it erases the entire board. Which makes it useless. Fix this
+ */
 
-const erasorButton = document.getElementById('erasorButton')
-const clearButton = document.getElementById('clearButton')
-const changeColorButton = document.getElementById('changeColor')
-let squareDiv
-let gridSize = 16
-let blockColor = "black"
+const container = document.querySelector('#container')
+let gridsize = 20
+let row
+let column
 
-const setUp = () => {
-    slider.value = "50"
-    slider.addEventListener('change', () => {
-        gridSize = slider.value
-        gridDiv.innerHTML = ''
-        loadDivGrid()
-    })
-
-    clearButton.addEventListener('click', () => {
-        gridDiv.innerHTML = ''
-        loadDivGrid()
-    })
-
-    erasorButton.addEventListener('click', () => {
-        blockColor = "white"
-    })
-
-    changeColorButton.addEventListener('click', () => {
-        blockColor = `#${Math.floor(Math.random()*16777215).toString(16)}`
-    })
-}
-const loadDivGrid = () => {
-    for (let i = 1; i <= (gridSize * gridSize); i++) {
-        squareDiv = document.createElement('div')
-        gridDiv.appendChild(squareDiv)
-        gridDiv.style.gridTemplateColumns = "repeat" + `(${gridSize}, 1fr)`;
-        gridDiv.style.gridTemplateRows = "repeat" + `(${gridSize}, 1fr)`;
-        changeBlockColor(squareDiv)
-        
+function createGrid() {
+    for (let i = 0; i < gridsize; i++) {
+        row = document.createElement('div')
+        row.className = 'gridRow'
+        console.log(row)
+        for (let j = 0; j < gridsize; j++) {
+            column = document.createElement('span')
+            column.className = 'gridColumn'
+            row.appendChild(column)
+        }
+        container.appendChild(row)
     }
 }
 
-const changeBlockColor = (squareDiv) => {
-    squareDiv.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = blockColor
-    })
-}
-
-loadDivGrid()
-setUp()
+createGrid()

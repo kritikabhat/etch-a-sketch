@@ -29,11 +29,11 @@ This project creates a basic sketchboard that can be used in the browser. The go
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 
-<img src="gameDesign.png">
+<img src="images/gameDesign.png">
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
-<img src="sizeChange.png">
+<img src="images/sizeChange.png">
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 

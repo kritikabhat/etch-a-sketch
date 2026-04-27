@@ -5,24 +5,21 @@
         <meta name="author" content="Kritika">
         <meta name="description" content="Basic sketchboard">
         <link rel="stylesheet" href="style.css">
-        <title>Etch-A-Sketch</title>
-        <link rel="icon" href="icon.png" type="imagine/x-icon">
+        <title>Demo</title>
+        <link rel="icon" href="images/icon.png" type="imagine/x-icon">
     </head>
     <body>
-        <div id="container">
-            <h1>Etch a Sketch</h1>
-            <div id="box">
-                <div class="wrapperContainer">
-                    <div class="slider">
-                        <div id="sliderDesc">Slide to change brush size</div>
-                        <input type="range" min="1" max="100" id="slider">
-                    </div>
-                    <button class="button" id="changeColor">Change Color</button>
-                    <button class="button" id="clearButton">Clear Board</button>
-                    <button class="button" id="erasorButton">Erasor</button>
-                </div>
-                <div id="gridDiv"></div>
-            </div>
+        <h1>Etch-A-Sketch</h1>
+        <div id="sketchArea">
+            <section id="toolbarArea">
+                <div>Slider</div>
+                <div>Change Color</div>
+                <div>Erasor</div>
+                <div>Clear Board</div>
+            </section>
+            <section id="gridArea">
+                <div id="container"></div>
+            </section>
         </div>
         <script src="script.js"></script>    
     </body>
