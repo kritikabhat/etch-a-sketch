@@ -1,25 +1,17 @@
 /**
- * Refactor code to be better- actually change everything
- * When you change size of brush (even with erasor) it erases the entire board. Which makes it useless. Fix this
- * 
- * if possible, need to set a width of gridArea based on screen size in CSS. 
- * Because otherwise flex makes it idiotically rectangular 
- * 
- * For the grid: use flex wrap and a simple loop gridsize * gridsize?
- * instead of On2. When you set a width for the grid, this works as well
+ * When you change size of brush (even with erasor)
+ * it erases the entire board. Which makes it useless. Fix this
  * 
  * Give erasor its own slider so you can change erasor size
- * 
- * 
 */
 
 const container = document.querySelector('#container')
-const brushSizeInput = document.querySelector('#brushSizeInput')
 const colorInput = document.querySelector('#colorInput')
 const erasorBtn = document.querySelector('#erasorBtn')
 const clearBtn = document.querySelector('#clearBtn')
+const gridSizeInput = document.querySelector('#gridSize')
 
-let gridsize = 100
+let gridSize = 10
 let row
 let column
 let draw = false
@@ -34,8 +26,11 @@ clearBtn.addEventListener('click', (e) => {
     createGrid()
 })
 
-brushSizeInput.addEventListener('click', (e) => {
-
+gridSizeInput.addEventListener('click', (e) => {
+    gridSize = e.target.value
+    console.log("gridSize: " + gridSize)
+    container.innerHTML = ''
+    createGrid()
 })
 
 colorInput.addEventListener('input', (e) => {
@@ -43,10 +38,10 @@ colorInput.addEventListener('input', (e) => {
 })
 
 function createGrid() {
-    for (let i = 0; i < gridsize; i++) {
+    for (let i = 0; i < gridSize; i++) {
         row = document.createElement('div')
         row.className = `gridRow`
-        for (let j = 0; j < gridsize; j++) {
+        for (let j = 0; j < gridSize; j++) {
             column = document.createElement('span')
             column.className = `gridColumn`
             row.appendChild(column)
