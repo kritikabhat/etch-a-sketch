@@ -1,10 +1,3 @@
-/**
- * When you change size of brush (even with erasor)
- * it erases the entire board. Which makes it useless. Fix this
- * 
- * Give erasor its own slider so you can change erasor size
-*/
-
 const container = document.querySelector('#container')
 const colorInput = document.querySelector('#colorInput')
 const erasorBtn = document.querySelector('#erasorBtn')
