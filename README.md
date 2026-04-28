@@ -1,4 +1,24 @@
-## Etch-A-Sketch
+## Etch-A-Sketch 2.0
+
+Welcome to Etch-A-Sketch 2.0.
+<ul>
+    <li>Painting now only starts on mouse press, so you have more control over the drawing</li>
+    <li>The site now works only for desktop/large screen users, mobile users are shown a message to view this on desktop.</li>
+    <li>Otherwise, the layout remains the same.</li>
+    <li>Changing the brush size still clears the board because it is a rudimentary sketch pad to revise code</li>
+</ul>
+
+Please see the current game layout below:
+<img src="images/newGameDesign.png">
+
+We can change our brush by changing the grid size, as shown:
+<img src="images/changeBrushSize.gif">
+
+We can use multiple colors, as follows:
+<img src="images/differentColors.gif">
+
+# Etch-A-Sketch 1.0 Below
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 This project creates a basic sketchboard that can be used in the browser. The goal of the project was to review some of my skills through practice.
 
@@ -29,11 +49,11 @@ This project creates a basic sketchboard that can be used in the browser. The go
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 
-<img src="gameDesign.png">
+<img src="images/oldGameDesign.png">
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
-<img src="sizeChange.png">
+<img src="images/oldSizeChange.png">
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 

@@ -4,25 +4,33 @@
         <meta charset="UTF-8">
         <meta name="author" content="Kritika">
         <meta name="description" content="Basic sketchboard">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Etch-A-Sketch</title>
-        <link rel="icon" href="icon.png" type="imagine/x-icon">
+        <link rel="icon" href="images/icon.png" type="imagine/x-icon">
     </head>
     <body>
-        <div id="container">
-            <h1>Etch a Sketch</h1>
-            <div id="box">
-                <div class="wrapperContainer">
-                    <div class="slider">
-                        <div id="sliderDesc">Slide to change brush size</div>
-                        <input type="range" min="1" max="100" id="slider">
-                    </div>
-                    <button class="button" id="changeColor">Change Color</button>
-                    <button class="button" id="clearButton">Clear Board</button>
-                    <button class="button" id="erasorButton">Erasor</button>
+        <h1><u>Etch-A-Sketch</u></h1>
+        <p class="mobileDevices">This website is designed for desktop users only, please open on desktop to use.</p>
+        <div class="sketchArea">
+            <section id="toolbarArea">
+                <div class="toolbarDiv">
+                    <div>Pick Color:<input id="colorInput" type="color"></div>
                 </div>
-                <div id="gridDiv"></div>
-            </div>
+                <div class="toolbarDiv">
+                    <button id="erasorBtn">Erasor</button>
+                </div>
+                <div class="toolbarDiv">
+                    <button id="clearBtn">Clear Board</button>
+                </div>
+                <div class="toolbarDiv">
+                    <div>Brush/Grid size</div>
+                    <div><input class="slider" id="gridSize" type="range" nin="1" max="100"></div>
+                </div>
+            </section>
+            <section id="gridArea">
+                <div id="container"></div>
+            </section>
         </div>
         <script src="script.js"></script>    
     </body>

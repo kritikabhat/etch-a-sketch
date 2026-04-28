@@ -1,51 +1,64 @@
-const container = document.getElementById('container')
-const gridDiv = document.getElementById('gridDiv')
-const slider = document.getElementById('slider')
+const container = document.querySelector('#container')
+const colorInput = document.querySelector('#colorInput')
+const erasorBtn = document.querySelector('#erasorBtn')
+const clearBtn = document.querySelector('#clearBtn')
+const gridSizeInput = document.querySelector('#gridSize')
 
-const erasorButton = document.getElementById('erasorButton')
-const clearButton = document.getElementById('clearButton')
-const changeColorButton = document.getElementById('changeColor')
-let squareDiv
-let gridSize = 16
-let blockColor = "black"
+let gridSize = 10
+let row
+let column
+let draw = false
+let selectedColor = '#000000'
 
-const setUp = () => {
-    slider.value = "50"
-    slider.addEventListener('change', () => {
-        gridSize = slider.value
-        gridDiv.innerHTML = ''
-        loadDivGrid()
-    })
+erasorBtn.addEventListener('click', (e) => {
+    selectedColor = '#FFFFFF'
+})
 
-    clearButton.addEventListener('click', () => {
-        gridDiv.innerHTML = ''
-        loadDivGrid()
-    })
+clearBtn.addEventListener('click', (e) => {
+    container.innerHTML = ''
+    createGrid()
+})
 
-    erasorButton.addEventListener('click', () => {
-        blockColor = "white"
-    })
+gridSizeInput.addEventListener('click', (e) => {
+    gridSize = e.target.value
+    console.log("gridSize: " + gridSize)
+    container.innerHTML = ''
+    createGrid()
+})
 
-    changeColorButton.addEventListener('click', () => {
-        blockColor = `#${Math.floor(Math.random()*16777215).toString(16)}`
-    })
-}
-const loadDivGrid = () => {
-    for (let i = 1; i <= (gridSize * gridSize); i++) {
-        squareDiv = document.createElement('div')
-        gridDiv.appendChild(squareDiv)
-        gridDiv.style.gridTemplateColumns = "repeat" + `(${gridSize}, 1fr)`;
-        gridDiv.style.gridTemplateRows = "repeat" + `(${gridSize}, 1fr)`;
-        changeBlockColor(squareDiv)
-        
+colorInput.addEventListener('input', (e) => {
+    selectedColor = e.target.value
+})
+
+function createGrid() {
+    for (let i = 0; i < gridSize; i++) {
+        row = document.createElement('div')
+        row.className = `gridRow`
+        for (let j = 0; j < gridSize; j++) {
+            column = document.createElement('span')
+            column.className = `gridColumn`
+            row.appendChild(column)
+        }
+        container.appendChild(row)
     }
 }
 
-const changeBlockColor = (squareDiv) => {
-    squareDiv.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = blockColor
+function print() {
+    container.addEventListener('mousedown', (e) => {
+        draw = true
+        e.target.style.backgroundColor = selectedColor
+    })
+
+    container.addEventListener('mousemove', (e) => {
+        if (draw)
+            e.target.style.backgroundColor = selectedColor
+    })
+
+    container.addEventListener('mouseup', (e) => {
+        e.target.style.backgroundColor = selectedColor
+        draw = false
     })
 }
 
-loadDivGrid()
-setUp()
+createGrid()
+print()
