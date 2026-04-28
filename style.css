@@ -31,16 +31,22 @@ body h1 {
 
 .toolbarDiv {
     width: 70%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 0.2em;
+    background-color: rgb(226, 216, 244);
 }
 
 #colorInput {
     margin-left: 1.5em;
-
+    padding: 0;
 }
 
 .toolbarDiv button {
     font-size: 0.9em;
-    padding: 0.1em 0.2em;
+    width: 100%;
+    border: none;
+    background-color: rgb(226, 216, 244);
 }
 
 .sketchArea #gridArea {
